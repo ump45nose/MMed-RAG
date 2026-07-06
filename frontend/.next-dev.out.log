@@ -1,0 +1,17 @@
+
+> rag-web-ui-frontend@0.1.0 dev
+> next dev -p 3000
+
+  ▲ Next.js 14.2.32
+  - Local:        http://localhost:3000
+  - Experiments (use with caution):
+    · outputFileTracingRoot
+
+ ✓ Starting...
+ ✓ Ready in 2.6s
+ ○ Compiling /dashboard/evaluation ...
+ ✓ Compiled /dashboard/evaluation in 4.9s (835 modules)
+ GET /dashboard/evaluation 200 in 5143ms
+ ✓ Compiled in 370ms (381 modules)
+ ✓ Compiled / in 283ms (717 modules)
+ GET / 200 in 417ms

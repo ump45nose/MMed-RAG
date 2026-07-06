@@ -1,0 +1,21 @@
+FROM python:3.11-slim
+
+WORKDIR /app
+
+# 轻量开发镜像只安装启动、迁移、Milvus 检索和评测链路需要的依赖。
+# 完整文档解析依赖仍保留在 requirements.txt，避免本地演示时被大依赖阻塞。
+RUN pip install --no-cache-dir \
+    fastapi uvicorn alembic SQLAlchemy mysql-connector-python \
+    python-jose python-multipart email-validator bcrypt \
+    pydantic-settings minio pypdf markdown docx2txt requests \
+    langchain==0.3.30 langchain-core==0.3.86 langchain-community==0.3.31 \
+    langchain-openai==0.3.35 langchain-chroma==0.2.6 \
+    langchain-ollama==0.3.10 langchain-deepseek==0.1.4 \
+    chromadb==1.5.9 pymilvus==2.5.18
+
+COPY . .
+
+ENV PYTHONPATH=/app
+ENV ENVIRONMENT=development
+
+CMD ["uvicorn", "app.main:app", "--host", "0.0.0.0", "--port", "8000"]

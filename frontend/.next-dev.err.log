@@ -1,0 +1,9 @@
+ ⚠ Invalid next.config.js options detected: 
+ ⚠     Unrecognized key(s) in object: 'outputStandalone', 'skipMiddlewareUrlNormalize', 'skipTrailingSlashRedirect' at "experimental"
+ ⚠ See more info here: https://nextjs.org/docs/messages/invalid-next-config
+ ⚠ experimental.outputStandalone has been renamed to "output: 'standalone'", please move the config.
+ ⚠ `skipMiddlewareUrlNormalize` has been moved out of `experimental`. Please update your next.config.js file accordingly.
+ ⚠ `skipTrailingSlashRedirect` has been moved out of `experimental`. Please update your next.config.js file accordingly.
+
+[1m[33mwarn[39m[22m - As of Tailwind CSS v3.3, the `@tailwindcss/line-clamp` plugin is now included by default.
+[1m[33mwarn[39m[22m - Remove it from the `plugins` array in your configuration to eliminate this warning.
