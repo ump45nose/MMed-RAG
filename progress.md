@@ -27,6 +27,32 @@
 | 后端编译检查 | `py -m compileall backend\app backend\tests` | Python 文件语法通过 | 通过 | 已通过 |
 | 后端单元测试 | `py -m pytest backend\tests\test_rag_demo_unit.py -q` | 新增单元测试通过 | 当前 Python 环境缺少 `pytest` 与后端依赖，未执行 | 受阻 |
 | 前端生产构建 | `npm --prefix frontend run build` | Next.js 构建通过 | 通过；存在既有 next.config/Tailwind 警告 | 已通过 |
+| 文档构建自检 | `rg` + JSONL 统计 | 新增文档引用本地文件和已有截图，评测集统计一致 | 41 条问题、32 可答、9 负例；新增 8 个文档文件 | 已通过 |
+
+## 会话：2026-07-06
+
+### 阶段 6：面试文档构建
+- **状态：** completed
+- 执行的操作：
+  - 读取本地后端检索、路由、metadata、Milvus、评测服务和前端评测/检索/聊天页面。
+  - 查看已有评测截图 `docs/images/evaluation-report-router-refusal.png`，提取 ablation 指标。
+  - 新增 README、ARCHITECTURE、TESTING、DEMO_SCRIPT、ROADMAP、难点故事、部署思路、截图清单。
+  - 备份展示文档到 `docs/backups/20260706_222112`。
+  - 将展示文档改为真实业务场景口径，面试话术集中到 `INTERVIEW_NOTES.md`。
+  - 生成知识库、文档详情、检索 trace、聊天拒答、评测报告截图。
+  - 通过 SQL 修正本地展示知识库名称，并清理截图过程产生的临时用户、聊天和上传记录。
+- 创建/修改的文件：
+  - `README.md`
+  - `ARCHITECTURE.md`
+  - `TESTING.md`
+  - `DEMO_SCRIPT.md`
+  - `ROADMAP.md`
+  - `docs/INTERVIEW_STORIES.md`
+  - `docs/DEPLOYMENT.md`
+  - `docs/SCREENSHOTS.md`
+  - `INTERVIEW_NOTES.md`
+  - `backend/database/20260706_business_kb_display_names.sql`
+  - `backend/database/20260706_docs_capture_cleanup.sql`
 
 ## 错误日志
 | 时间戳 | 错误 | 尝试次数 | 解决方案 |
